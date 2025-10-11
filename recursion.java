@@ -54,6 +54,21 @@ public class recursion {
         return ((a%10)*10)+reversenum(a/10);
         
     }
+    static int rev(int a){
+        int digits=(int) (Math.log10(a))+1;
+        return helper(a,digits);
+    }
+    public static int helper(int a, int digits) {
+        if(a%10==a){
+            return a;
+        }
+        int rem=a%10;
+        return rem*(int)(Math.pow(10, digits-1))+helper(a/10, digits-1);
+    }
+    static boolean Numpalindrom(int a){
+        return (a==rev(a));
+    }
+    
     public static void main(String[] args) {
         // printnum(5);
         // System.out.println(fact(5));
@@ -61,6 +76,8 @@ public class recursion {
         // System.out.println(sumofDigits(12378));
         // System.out.println(productDigts(523));
         // passNumbers(5);
-        System.out.println(reversenum(123));
+        // System.out.println(reversenum(123));
+        // System.out.println(rev(1234));
+        System.out.println(Numpalindrom(12345));
     }
 }
