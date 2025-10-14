@@ -13,7 +13,7 @@ public class subarraysum {
                 if(sum==3 && count>max){
                     max=count;
                 }
-                // System.out.println("Subarray sum from " + start + " to " + end + " = " + sum);
+                
             }
         }
         System.out.println(max);
