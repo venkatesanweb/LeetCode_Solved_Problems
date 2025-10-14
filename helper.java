@@ -1,4 +1,4 @@
-class Solution {
+class leetcode_pr {
 
     class Range implements Comparable<Range> {
         int startIndex;
