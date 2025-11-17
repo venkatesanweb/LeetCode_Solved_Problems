@@ -1,15 +1,13 @@
-class leetcode151 {
-    static public String reverseWords(String s) {
-        String[] arr=s.trim().split("\\s+");
-        StringBuilder ss=new StringBuilder();
-        for(int i=arr.length-1;i>=0;i--){
-            ss.append(arr[i]);
-            if(i!=0) ss.append(" ");
+class Solution {
+    public int countNegatives(int[][] grid) {
+        int co=0;
+        for (int [] arr:grid){
+            Arrays.sort(arr);
+            for(int val:arr){
+                if(val<0) co++;
+                else break;
+            }
         }
-        return ss.toString();
+        return co;
     }
-public static void main(String[] args){
-String ss=reverseWords("Hello World");
-System.out.println(ss);
-}
 }
