@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    int minimumDifference(vector<int>& nums, int k) {
+        sort(nums.begin(), nums.end());
+        int n = nums.size(), mn = 1e5;
+        for (int i = k - 1; i < n; i++) 
+            mn = min(mn, nums[i] - nums[i - k + 1]);
+        return mn;
+    }
+};
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int n;
+    cin >> n;
+
+    vector<int> nums(n);
+    for (int i = 0; i < n; i++) {
+        cin >> nums[i];
+    }
+
+    int k;
+    cin >> k;
+
+    Solution sol;
+    int result = sol.minimumDifference(nums, k);
+
+    cout << result << "\n";
+
+    return 0;
+}
