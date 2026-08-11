@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int superPow(long long a, vector<int>& b) {
+        long long res=1;
+        long long mod=1337;
+        for(int i=b.size()-1;i>=0;i--)
+        {
+            for(int j=0;j<b[i];j++)
+            {
+                res=(res*a)%mod;
+            }
+            int c=a;
+            for(int i=0;i<9;i++)
+            {
+                c=(c*a)%mod;
+            }
+            a=c;
+        }
+        return res;
+    }
+};
